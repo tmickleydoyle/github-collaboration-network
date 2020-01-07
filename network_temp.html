@@ -1,0 +1,29 @@
+<!-- Built from https://github.com/vasturiano/3d-force-graph/blob/master/example/basic/index.html -->
+
+<head>
+   <style> body { margin: 0; } </style>
+ 
+   <script src="//unpkg.com/dat.gui"></script>
+   <script src="//unpkg.com/3d-force-graph"></script>
+ </head>
+ 
+ <body>
+ 
+   <div id="3d-graph"></div>
+ 
+   <script>
+     const elem = document.getElementById('3d-graph');
+ 
+     var data_json = json_data_input;
+
+     const Graph = ForceGraph3D({ controlType: 'trackball' })(elem)
+       .graphData(data_json)
+       .backgroundColor('#ffffff')
+       .nodeColor('#000011')
+       .showNavInfo(false)
+       .nodeAutoColorBy('id')
+       .nodeLabel(node => `<span style="color: black">${node.id}</span>`)
+       .cameraPosition({ z: distance })
+       .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null);
+   </script>
+ </body>
