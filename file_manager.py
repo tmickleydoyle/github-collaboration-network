@@ -5,7 +5,7 @@ GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
 ORGANIZATION = os.environ['GITHUB_ORGANIZATION']
 
 NETWORK_TEXT = 'network_temp.html'
-NETWORK_HTML = 'network_graph.html'
+NETWORK_HTML = 'index.html'
 
 PAGE_LENGTH = '?per_page=1000'
 

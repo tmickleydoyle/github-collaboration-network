@@ -6,6 +6,7 @@ from file_manager import MODEL_FILE, LOGIN_LOOKUP
 
 import pickle
 
+build_model = False
 save_model = True
 train_model = True
 
@@ -24,31 +25,32 @@ def build_network():
     build_html_content(network_connections)
 
     # Build Bernoulli Mixture Model data
-    group_data, login_lookup = GitHub.build_groups(created_dict, comments_dict)
+    if build_model:
+        group_data, login_lookup = GitHub.build_groups(created_dict, comments_dict)
 
-    # Train model
-    bmm_train = BernoulliMixtureModel()
+        # Train model
+        bmm_train = BernoulliMixtureModel()
 
-    if train_model:
-        train_data, test_data = train_test_split(group_data, test_size=0.33)
-        bmm_train.fit(train_data, 100)
-        for group in test_data:
-            try:
-                prediction = bmm_train.predict(group)
-                print(prediction)
-            except IndexError:
-                pass
+        if train_model:
+            train_data, test_data = train_test_split(group_data, test_size=0.33)
+            bmm_train.fit(train_data, 100)
+            for group in test_data:
+                try:
+                    prediction = bmm_train.predict(group)
+                    print(prediction)
+                except IndexError:
+                    pass
 
-    # Fit final model
-    bmm = BernoulliMixtureModel()
-    bmm.fit(group_data, 100)
+        # Fit final model
+        bmm = BernoulliMixtureModel()
+        bmm.fit(group_data, 100)
 
-    # Save Model
-    if save_model:
-        with open(MODEL_FILE, 'wb') as model:
-            pickle.dump(bmm, model)
-        with open(LOGIN_LOOKUP, 'wb') as lookup:
-            pickle.dump(login_lookup, lookup)
+        # Save Model
+        if save_model:
+            with open(MODEL_FILE, 'wb') as model:
+                pickle.dump(bmm, model)
+            with open(LOGIN_LOOKUP, 'wb') as lookup:
+                pickle.dump(login_lookup, lookup)
 
 
 if __name__ == "__main__":
