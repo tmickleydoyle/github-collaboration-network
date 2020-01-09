@@ -14,6 +14,32 @@ Person_2, Person_3, Person_4
 **Social Connections:**
 ((Person_1, Person_2), (Person_1, Person_3), (Person_1, Person_4))
 
+## Running the Code in the Terminal
+
+1 - Clone the repository.
+
+```bash
+git clone git@github.com:tmickleydoyle/github-collaboration-network.git
+```
+
+or
+
+```bash
+git clone https://github.com/tmickleydoyle/github-collaboration-network.git
+```
+
+2 - Move into the repository directory.
+
+```bash
+cd github-collaboration-network
+```
+
+3 - Execute the Makefile
+
+```bash
+make
+```
+
 *******
 
 The following information is needed to run the scripts and can be located on the `file_manager.py` file:
