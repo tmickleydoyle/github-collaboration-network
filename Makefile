@@ -4,7 +4,7 @@ PYTHON=/usr/local/bin/python3.7
 PIP=/usr/local/bin/pip3.7
 ENV=.env
 
-server: build_network_open_url
+default: server
 
 env:
 	virtualenv -p ${PYTHON} ${ENV}
@@ -14,5 +14,5 @@ main: env
 	python main.py
 server: main
 	python -m http.server
-only_server:
+open_url:
 	python -m http.server
