@@ -1,6 +1,7 @@
 # Repository files to ignore
 network_graph.html
 model.pickle
+index.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
