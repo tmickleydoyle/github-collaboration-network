@@ -14,5 +14,5 @@ main: env
 	python main.py
 server: main
 	python -m http.server
-open_url:
+server_only:
 	python -m http.server
