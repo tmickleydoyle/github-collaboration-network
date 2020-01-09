@@ -51,8 +51,12 @@ ORGANIZATION = os.environ['GITHUB_ORGANIZATION']
 ```
 
 GITHUB_USERNAME - GitHub profile name/login.
+
 GITHUB_TOKEN - Token linked to an individual account. [Step for creating a token.](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+
 ORGANIZATION - The name of the organization. This only works for organizations the user has is an active member.
+
+I have included the above information in my `bash_profile`.
 
 *******
 
