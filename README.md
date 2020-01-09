@@ -56,6 +56,8 @@ GITHUB_TOKEN - Token linked to an individual account. [Step for creating a token
 
 ORGANIZATION - The name of the organization. This only works for organizations the user has is an active member.
 
+I have included the above information in my `bash_profile`.
+
 *******
 
 I am adding a Bernoulli Mixture Model to find the most likely people to include in a social group.
